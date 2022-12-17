@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RB - Ahmad Adriansyah Hasibuan - 119140079 - Tugas Individu 1</title>
+     <style>
+    table,
+    th,
+    td {
+      padding: 10px;
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+    <table id="Tabel"  style="margin: auto;">
+        <tr bgcolor='#ADD8E6'>
+            <th>No</th>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Nilai</th>
+            <th>Huruf Mutu</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Adri</td>
+            <td>119140079</td>
+            <td>90</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Budi</td>
+            <td>119140952</td>
+            <td>70</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Pekerti</td>
+            <td>119146320</td>
+            <td>40</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Justin</td>
+            <td>119140328</td>
+            <td>85</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Lhaksana</td>
+            <td>119141956</td>
+            <td>50</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Rudi</td>
+            <td>119142890</td>
+            <td>99</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Tugimin</td>
+            <td>119142643</td>
+            <td>55</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Jody</td>
+            <td>119146543</td>
+            <td>45</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Rahmad</td>
+            <td>119120975</td>
+            <td>35</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Abdi</td>
+            <td>119142098</td>
+            <td>90</td>
+            <td></td>
+        </tr>
+    </table>
+    
+    <script>
+    let logicgrade = (nilai) => {
+      if (nilai >= 80) {
+        return 'A';
+      } else if (nilai<80 && nilai>=70) {
+        return 'AB';
+      } else if (nilai<70 && nilai>=60) {
+        return 'B';
+      } else if (nilai<60 && nilai>=50) {
+        return 'BC'
+      } else if (nilai<50 && nilai>=40) {
+        return 'C';
+      } else if (nilai<40 && nilai>=10) {
+        return 'D';
+      } else {
+        return 'E';
+      }
+
+    }
+
+    let grading = (namatabel, rownilai, rowgrade) => {
+      let table = document.getElementById(namatabel);
+      let tabelLenght = table.rows.length;
+      for (i = 1; i < tabelLenght; i++) {
+        var nilai = table.rows[i].cells.item(rownilai).innerHTML;
+        table.rows[i].cells.item(rowgrade).innerHTML = logicgrade(nilai);
+      }
+    }
+
+    grading("Tabel", 3, 4);
+  </script>
+
+</body>
+</html>
